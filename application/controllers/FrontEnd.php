@@ -12,7 +12,7 @@ class FrontEnd extends CI_Controller{
   {
     $this->load->model('Zapatillas_Model', 'Zapatillas');
     $datos['Zapatillas'] = $this->Zapatillas->findAll();
-    $this->load->view('Zapatillas', $datos);
+    $this->load->view('Inicio', $datos);
   }
 
 }
