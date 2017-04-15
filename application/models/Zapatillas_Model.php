@@ -13,7 +13,8 @@ private  $_columns  =  array(
 'zapatilla_nombre' => '',
 'zapatilla_genero' => '',
 'zapatilla_modelo' => '',
-'zapatilla_talla' => '',
+'zapatilla_talla_desde' => '',
+'zapatilla_talla_hasta' => '',
 'zapatilla_descipcion' => '',
 'zapatilla_precio' => 0,
 'zapatilla_imagen_id' => 0,
@@ -58,25 +59,45 @@ function delete($id){
 function findAll(){
   $result=array();
   $bit = null;
-  $consulta = $this->db->get('dirtyllas_zapatillas');
+  $consulta = $this->db->query('select zapatilla_id, zapatilla_nombre, zapatilla_genero,
+  zapatilla_modelo, zapatilla_talla_desde, zapatilla_talla_hasta, zapatilla_descripcion, zapatilla_precio,
+  marca_nombre, categoria_nombre from dirtyllas_zapatillas
+  INNER JOIN dirtyllas_marcas on dirtyllas_marcas.marca_id = dirtyllas_zapatillas.zapatilla_marca_id
+  INNER JOIN dirtyllas_categorias on dirtyllas_categorias.categoria_id = dirtyllas_zapatillas.zapatilla_categoria_id');
     foreach ($consulta->result() as $row) {
     $result[] = $this->create($row);
   }
   return $result;
 }
 
-function findById($id){
+function findBySex($Genero){
   $result=array();
   $bit = null;
-  $this->db->where('zapatilla_id',$id);
-  $consulta = $this->db->get('dirtyllas_zapatillas');
-  if($consulta->num_rows() > 0){
+  $consulta = $this->db->query('select zapatilla_id, zapatilla_nombre, zapatilla_genero,
+  zapatilla_modelo, zapatilla_talla_desde, zapatilla_talla_hasta, zapatilla_descripcion, zapatilla_precio,
+  marca_nombre, categoria_nombre from dirtyllas_zapatillas
+  INNER JOIN dirtyllas_marcas on dirtyllas_marcas.marca_id = dirtyllas_zapatillas.zapatilla_marca_id
+  INNER JOIN dirtyllas_categorias on dirtyllas_categorias.categoria_id = dirtyllas_zapatillas.zapatilla_categoria_id
+  where dirtyllas_zapatillas.zapatilla_genero ="'.$Genero.'"');
     foreach ($consulta->result() as $row) {
     $result[] = $this->create($row);
+  }
+  return $result;
+  }
+
+  function findByBrand($Marca){
+    $result=array();
+    $bit = null;
+    $consulta = $this->db->query('select zapatilla_id, zapatilla_nombre, zapatilla_genero,
+    zapatilla_modelo, zapatilla_talla_desde, zapatilla_talla_hasta, zapatilla_descripcion, zapatilla_precio,
+    marca_nombre, categoria_nombre from dirtyllas_zapatillas
+    INNER JOIN dirtyllas_marcas on dirtyllas_marcas.marca_id = dirtyllas_zapatillas.zapatilla_marca_id
+    INNER JOIN dirtyllas_categorias on dirtyllas_categorias.categoria_id = dirtyllas_zapatillas.zapatilla_categoria_id
+    where dirtyllas_zapatillas.zapatilla_marca_id ="'.$Marca.'"');
+      foreach ($consulta->result() as $row) {
+      $result[] = $this->create($row);
     }
-  }else{
-    $result[] = $this->create($this->_columns);
-  }
     return $result;
-  }
+    }
+
 }
