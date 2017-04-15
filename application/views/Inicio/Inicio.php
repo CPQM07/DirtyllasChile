@@ -32,18 +32,18 @@
             </ul>
             <!-- Dropdown Structure -->
             <ul class='dropdown-content' id='feature-dropdown'>
-              <li><a class="navy-text" href="https://www.instagram.com/_dirtyllas/"><i class='fa fa-instagram black-text'></i> _Dirtyllas</a></li>
-              <li><a class="navy-text" href="https://www.facebook.com/DirtyllasCL/"><i class='fa fa-facebook black-text'></i> DIRTYllasChile</a></li>
+              <li><a href="https://www.instagram.com/_dirtyllas/"><i class='fa fa-instagram orange-text'></i><span class="grey-text"> _Dirtyllas</span></a></li>
+              <li><a href="https://www.facebook.com/DirtyllasCL/"><i class='fa fa-facebook orange-text'></i><span class="grey-text"> DIRTYllasChile</span></a></li>
             </ul>
 
             <ul class="side-nav" id="nav-mobile">
               <li><img src="<?= base_url() ?>resources/images/Dirtyllas/DIRTYllasLogo.png" width="100px" alt=""></li>
               <li class="active"><a>Siguenos <i class='fa fa-flag-o'></i></a></li>
-              <li><a class="orange-text" href="https://www.instagram.com/_dirtyllas/"><i class='fa fa-instagram black-text'></i> _Dirtyllas</a></li>
-              <li><a class="orange-text" href="https://www.facebook.com/DirtyllasCL/"><i class='fa fa-facebook black-text'></i> DIRTYllasChile</a></li>
+              <li><a href="https://www.instagram.com/_dirtyllas/"><i class='fa fa-instagram orange-text'></i><span class="grey-text"> _Dirtyllas</span></a></li>
+              <li><a href="https://www.facebook.com/DirtyllasCL/"><i class='fa fa-facebook orange-text'></i><span class="grey-text"> DIRTYllasChile</span></a></li>
             </ul>
 
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons orange-text">menu</i></a>
           </div>
         </nav>
     </div>
@@ -54,7 +54,7 @@
         <div class="container">
           <br>
           <div class="header center">
-            <img class="img-responsive" src="<?= base_url() ?>resources/images/Dirtyllas/DIRTYllasLogo.png" width="300px" alt="">
+            <img class="responsive-img" src="<?= base_url() ?>resources/images/Dirtyllas/DIRTYllasLogo.png" width="300px" alt="">
           </div>
           <div class="row center">
             <h5 class="header col s12 light white-text"><?= $Frase ?></h5>
@@ -62,34 +62,24 @@
         </div>
       </div>
       <div class="parallax"><img src="<?= base_url() ?>resources/images/Dirtyllas/Banner3.jpg"></div>
-    </div>
+    </div><br>
 
-    <br>
-
-    <!-- DIRTYllasChile Catalogo-->
     <!-- Modal Structure -->
     <div id="BuscarZapatilla" class="modal modal-fixed-footer">
         <div class="modal-content">
           <div class="center">
             <img src="<?= base_url() ?>resources/images/Dirtyllas/DIRTYllasLogo.png" width="100px" alt="">
-          </div>
-          <h3 class="center"><em>DIRTYllas - Marcas</em></h3>
-          <form class="" action='#' method="post">
-            <div class="input-field col s12">
-              <select>
-                <option value="" disabled>-</option>
+          </div><br>
+          <h5 class="center"><em>DIRTYLLAS CHILE - MARCAS</em></h5>
+            <div class="collection">
                 <?php foreach ($Marcas as $key => $value) :?>
-                  <option value="<?= $value->get('marca_id') ?>"><?=$value->get('marca_nombre')?></option>
+                  <a class="collection-item center" href="<?=site_url('FrontEnd/Marca/'.$value->get('marca_id'))?>"><span class="orange-text"><?= $value->get('marca_nombre') ?></span></a>
                 <?php endforeach ?>
-              </select>
             </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" name="button">VER</button>
         </div>
       </div>
 
+    <!-- DIRTYllasChile Categorias-->
     <div class="container generos">
       <nav class="nav-extended grey darken-3">
         <div class="nav-wrapper">
@@ -111,44 +101,48 @@
       <div class="container">
         <div class="gallery row">
 
-          <?php foreach ($Zapatillas as $key => $value) :?>
+          <?php foreach ($Zapatillas as $key => $valueZap) :?>
           <div class="col l4 m6 s12 gallery-item gallery-expand gallery-filter">
             <div class="gallery-curve-wrapper">
               <a class="gallery-cover gray">
-                <img class="responsive-img" src="http://placehold.it/350x250" alt="placeholder">
+                <img class="responsive-img" src='<?=base_url("resources/images/Modelos/ZapatillaPortada-".$valueZap->get("zapatilla_id")).".jpg"?>'>
               </a>
               <div class="gallery-header">
-                <span class="blue-text"><?=$value->get('marca_nombre')?></span>
-                <span class="blue-text"><?=$value->get('zapatilla_modelo')?></span><br>
-                <span class="deep-orange-text"><i class='fa fa-dollar'></i><span> <?=$value->get('zapatilla_precio')?></span></span>
+                <span class="blue-text"><?=$valueZap->get('marca_nombre')?></span>
+                <span class="blue-text"><?=$valueZap->get('zapatilla_modelo')?></span><br>
+                <span class="deep-orange-text"><i class='fa fa-dollar'></i><span> <?=$valueZap->get('zapatilla_precio')?></span></span>
               </div>
               <div class="gallery-body">
                 <div class="title-wrapper">
-                  <h4><span class="deep-orange-text"><?=$value->get('zapatilla_modelo')?></span></h4>
-                  <h6><span class="blue-text"><?=$value->get('categoria_nombre')?></span></h6>
+                  <h4><span class="deep-orange-text"><?=$valueZap->get('zapatilla_modelo')?></span></h4>
+                  <h6><span class="blue-text"><?=$valueZap->get('categoria_nombre')?></span></h6>
                 </div>
 
                 <div class="description">
                   <div>
-                    <h5><i class='deep-orange-text fa fa-dollar'></i> <?=$value->get('zapatilla_precio')?></h5><br>
-                    <span class="deep-orange-text">Tallas Desde: <?=$value->get('zapatilla_talla_desde')?></span><br>
-                    <span class="deep-orange-text">Hasta: <?=$value->get('zapatilla_talla_hasta')?></span>
+                    <h5><i class='deep-orange-text fa fa-dollar'></i> <?=$valueZap->get('zapatilla_precio')?></h5><br>
+                    <span class="deep-orange-text">Tallas Desde: <?=$valueZap->get('zapatilla_talla_desde')?></span><br>
+                    <span class="deep-orange-text">Hasta: <?=$valueZap->get('zapatilla_talla_hasta')?></span>
                   </div><br>
-                  <p><?=$value->get('zapatilla_descripcion')?></p>
+                  <p><?=$valueZap->get('zapatilla_descripcion')?></p>
                 </div>
 
                 <div class="carousel-wrapper">
                   <div class="carousel">
-                    <a class="carousel-item" href="#one!"><img src="http://placehold.it/300x200"></a>
-                    <a class="carousel-item" href="#two!"><img src="http://placehold.it/300x200"></a>
-                    <a class="carousel-item" href="#three!"><img src="http://placehold.it/300x200"></a>
-                    <a class="carousel-item" href="#four!"><img src="http://placehold.it/300x200"></a>
-                    <a class="carousel-item" href="#five!"><img src="http://placehold.it/300x200"></a>
+                    <?php foreach ($Imagenes as $key => $valueImg) :?>
+                      <?php if ($valueZap->get('zapatilla_id') == $valueImg->get('imagen_id')) { ?>
+                        <a class="carousel-item" href="#one!"><img src='<?=base_url("resources/images/Modelos/".$valueImg->get("imagen_portada")).".jpg"?>'></a>
+                        <a class="carousel-item" href="#two!"><img src='<?=base_url("resources/images/Modelos/".$valueImg->get("imagen_portada")).".jpg"?>'></a>
+                        <a class="carousel-item" href="#three!"><img src='<?=base_url("resources/images/Modelos/".$valueImg->get("imagen_portada")).".jpg"?>'></a>
+                        <a class="carousel-item" href="#four!"><img src='<?=base_url("resources/images/Modelos/".$valueImg->get("imagen_portada")).".jpg"?>'></a>
+                        <a class="carousel-item" href="#five!"><img src='<?=base_url("resources/images/Modelos/".$valueImg->get("imagen_portada")).".jpg"?>'></a>
+                    <?php } ?>
+                    <?php endforeach  ?>
                   </div>
                 </div>
               </div>
               <div class="gallery-action">
-                <a class="btn-floating btn-large waves-effect waves-light"><i class="material-icons">favorite</i></a>
+                <a class="btn-floating btn-large waves-effect waves-light"><i class='fa fa-whatsapp'></i></a>
               </div>
             </div>
           </div>
@@ -173,7 +167,7 @@
       </div>
       <div class="footer-copyright">
         <div class="container">
-        © 2017 Copyright <a href="" class="deep-orange-text">CPQM07</a>
+        © 2017 Copyright <a href="https://www.instagram.com/c.pierre_" class="deep-orange-text">CPQM07</a>
         </div>
       </div>
     </footer>

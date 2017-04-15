@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Marcas_Model extends CI_Model {
+class Imagenes_Model extends CI_Model {
 
 public function __construct()
 {
@@ -22,7 +22,7 @@ function get($attr){
 }
 
 public function create($row){
-  $marca =  new Marcas_Model();
+  $marca =  new Imagenes_Model();
   foreach ($row as $key => $value)
     {
       $marca->_columns[$key] = $value;
@@ -45,7 +45,7 @@ function update($id, $data) {
   }
 }
 
-function delete($id){}
+function delete($id){
   $this->db->where('imagen_id',$id);
   return $this->db->delete('dirtyllas_imagenes');
 }

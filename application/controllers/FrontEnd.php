@@ -6,25 +6,26 @@ class FrontEnd extends CI_Controller{
   public function __construct()
   {
     parent::__construct();
+    $this->load->model('Zapatillas_Model', 'Zapatillas');
+    $this->load->model('Marcas_Model', 'Marcas');
+    $this->load->model('Imagenes_Model', 'Imagenes');
   }
 
   function index()
   {
-    $this->load->model('Zapatillas_Model', 'Zapatillas');
-    $this->load->model('Marcas_Model', 'Marcas');
     $datos['Zapatillas'] = $this->Zapatillas->findAll();
     $datos['Marcas'] = $this->Marcas->findAll();
+    $datos['Imagenes'] = $this->Imagenes->findAll();
     $datos['AddActive'] = "Todas";
     $datos['Frase'] = "Del Mundo para Tus Pies!";
-    $this->load->view('Inicio', $datos);
+    $this->load->view('Inicio/Inicio', $datos);
   }
 
   function Genero($Genero)
   {
-    $this->load->model('Zapatillas_Model', 'Zapatillas');
-    $this->load->model('Marcas_Model', 'Marcas');
     $datos['Zapatillas'] = $this->Zapatillas->findBySex($Genero);
     $datos['Marcas'] = $this->Marcas->findAll();
+    $datos['Imagenes'] = $this->Imagenes->findAll();
     $datos['AddActive'] = "$Genero";
 
     //ENUNCIADOS PARALAX
@@ -33,15 +34,14 @@ class FrontEnd extends CI_Controller{
       elseif ($Genero == 3) { $datos['Frase'] = "Zapatillas Unisex";}
       elseif ($Genero != 1 || $Genero != 2 || $Genero != 3) { $datos['Frase'] = "Aqui no Sapo Culiao"; }
 
-    $this->load->view('Inicio', $datos);
+    $this->load->view('Inicio/Inicio', $datos);
   }
 
   function Marca($Marca)
   {
-    $this->load->model('Zapatillas_Model', 'Zapatillas');
-    $this->load->model('Marcas_Model', 'Marcas');
     $datos['Zapatillas'] = $this->Zapatillas->findByBrand($Marca);
     $datos['Marcas'] = $this->Marcas->findAll();
+    $datos['Imagenes'] = $this->Imagenes->findAll();
     $datos['AddActive'] = "Todas";
 
     //ENUNCIADOS PARALAX
@@ -54,7 +54,15 @@ class FrontEnd extends CI_Controller{
       elseif ($Marca != 1 || $Marca != 2 || $Marca != 3 ||
       $Marca != 4 || $Marca != 5 || $Marca != 6) { $datos['Frase'] = "Aqui no Sapo Culiao"; }
 
-    $this->load->view('Inicio', $datos);
+    $this->load->view('Inicio/Inicio', $datos);
+  }
+
+  function test()
+  {
+    $datos['Zapatillas'] = $this->Zapatillas->findAll();
+    $datos['Marcas'] = $this->Marcas->findAll();
+    $datos['Imagenes'] = $this->Imagenes->findAll();
+    $this->load->view('Zapatillas', $datos);
   }
 
 }
