@@ -10,45 +10,28 @@ parent::__construct();
 
 private  $_columns  =  array(
 'zapatilla_id' => 0,
-'zapatilla_nombre' => '',
 'zapatilla_genero' => '',
 'zapatilla_modelo' => '',
 'zapatilla_talla_desde' => '',
 'zapatilla_talla_hasta' => '',
 'zapatilla_descipcion' => '',
 'zapatilla_precio' => 0,
-'zapatilla_imagen_id' => 0,
+'zapatilla_imagen_portada' => '',
+'zapatilla_imagen_uno' => '',
+'zapatilla_imagen_dos' => '',
+'zapatilla_imagen_tres' => '',
+'zapatilla_imagen_cuatro' => '',
 'zapatilla_marca_id' => 0,
 'zapatilla_categoria_id' => 0
 );
 
-private  $_columnsImg =  array(
-'zapatilla_id' => 0,
-'zapatilla_nombre' => '',
-'zapatilla_genero' => '',
-'zapatilla_modelo' => '',
-'zapatilla_talla_desde' => '',
-'zapatilla_talla_hasta' => '',
-'zapatilla_descipcion' => '',
-'zapatilla_precio' => 0,
-'zapatilla_imagen_id' => 0,
-'zapatilla_marca_id' => 0,
-'zapatilla_categoria_id' => 0,
-'imagen_id' => 0,
-'imagen_portada' => '',
-'imagen_uno' => '',
-'imagen_dos' => '',
-'imagen_tres' => '',
-'imagen_cuatro' => ''
-);
-
 function get($attr){
-  return $this->_columnsImg[$attr];
+  return $this->_columns[$attr];
 }
 
 function setColumns ($row = null){
   foreach ($row as $key => $value) {
-    $this->_columnsImg[$key] = $value;
+    $this->_columns[$key] = $value;
   }
 }
 
@@ -56,13 +39,13 @@ function create($row){
   $zapatilla =  new Zapatillas_Model();
   foreach ($row as $key => $value)
     {
-      $zapatilla->_columnsImg[$key] = $value;
+      $zapatilla->_columns[$key] = $value;
     }
   return $zapatilla;
 }
 
 function insert(){
-$this->db->insert('dirtyllas_zapatillas',$this->_columnsImg);
+$this->db->insert('dirtyllas_zapatillas',$this->_columns);
 }
 
 function update($id, $data) {
@@ -84,11 +67,10 @@ function delete($id){
 function findAll(){
   $result=array();
   $bit = null;
-  $consulta = $this->db->query('select zapatilla_id, zapatilla_nombre, zapatilla_genero,
-  zapatilla_modelo, zapatilla_talla_desde, zapatilla_talla_hasta, zapatilla_descripcion, zapatilla_precio,
-  zapatilla_imagen_id, marca_nombre, categoria_nombre from dirtyllas_zapatillas
+  $consulta = $this->db->query('select zapatilla_id, zapatilla_genero, zapatilla_modelo, zapatilla_talla_desde,
+  zapatilla_talla_hasta, zapatilla_descripcion, zapatilla_precio, zapatilla_imagen_portada,
+  zapatilla_imagen_uno, zapatilla_imagen_dos, zapatilla_imagen_tres, zapatilla_imagen_cuatro, marca_nombre, categoria_nombre from dirtyllas_zapatillas
   INNER JOIN dirtyllas_marcas on dirtyllas_marcas.marca_id = dirtyllas_zapatillas.zapatilla_marca_id
-  INNER JOIN dirtyllas_imagenes on dirtyllas_imagenes.imagen_id = dirtyllas_zapatillas.zapatilla_imagen_id
   INNER JOIN dirtyllas_categorias on dirtyllas_categorias.categoria_id = dirtyllas_zapatillas.zapatilla_categoria_id');
     foreach ($consulta->result() as $row) {
     $result[] = $this->create($row);
@@ -99,11 +81,10 @@ function findAll(){
 function findBySex($Genero){
   $result=array();
   $bit = null;
-  $consulta = $this->db->query('select zapatilla_id, zapatilla_nombre, zapatilla_genero,
-  zapatilla_modelo, zapatilla_talla_desde, zapatilla_talla_hasta, zapatilla_descripcion, zapatilla_precio,
-  zapatilla_imagen_id, marca_nombre, categoria_nombre from dirtyllas_zapatillas
+  $consulta = $this->db->query('select zapatilla_id, zapatilla_genero, zapatilla_modelo, zapatilla_talla_desde,
+  zapatilla_talla_hasta, zapatilla_descripcion, zapatilla_precio, zapatilla_imagen_portada,
+  zapatilla_imagen_uno, zapatilla_imagen_dos, zapatilla_imagen_tres, zapatilla_imagen_cuatro, marca_nombre, categoria_nombre from dirtyllas_zapatillas
   INNER JOIN dirtyllas_marcas on dirtyllas_marcas.marca_id = dirtyllas_zapatillas.zapatilla_marca_id
-  INNER JOIN dirtyllas_imagenes on dirtyllas_imagenes.imagen_id = dirtyllas_zapatillas.zapatilla_imagen_id
   INNER JOIN dirtyllas_categorias on dirtyllas_categorias.categoria_id = dirtyllas_zapatillas.zapatilla_categoria_id
   where dirtyllas_zapatillas.zapatilla_genero ="'.$Genero.'"');
     foreach ($consulta->result() as $row) {
@@ -115,11 +96,10 @@ function findBySex($Genero){
 function findByBrand($Marca){
   $result=array();
   $bit = null;
-  $consulta = $this->db->query('select zapatilla_id, zapatilla_nombre, zapatilla_genero,
-  zapatilla_modelo, zapatilla_talla_desde, zapatilla_talla_hasta, zapatilla_descripcion, zapatilla_precio,
-  zapatilla_imagen_id, marca_nombre, categoria_nombre from dirtyllas_zapatillas
+  $consulta = $this->db->query('select zapatilla_id, zapatilla_genero, zapatilla_modelo, zapatilla_talla_desde,
+  zapatilla_talla_hasta, zapatilla_descripcion, zapatilla_precio, zapatilla_imagen_portada,
+  zapatilla_imagen_uno, zapatilla_imagen_dos, zapatilla_imagen_tres, zapatilla_imagen_cuatro, marca_nombre, categoria_nombre from dirtyllas_zapatillas
   INNER JOIN dirtyllas_marcas on dirtyllas_marcas.marca_id = dirtyllas_zapatillas.zapatilla_marca_id
-  INNER JOIN dirtyllas_imagenes on dirtyllas_imagenes.imagen_id = dirtyllas_zapatillas.zapatilla_imagen_id
   INNER JOIN dirtyllas_categorias on dirtyllas_categorias.categoria_id = dirtyllas_zapatillas.zapatilla_categoria_id
   where dirtyllas_zapatillas.zapatilla_marca_id ="'.$Marca.'"');
     foreach ($consulta->result() as $row) {

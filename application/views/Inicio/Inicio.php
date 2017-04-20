@@ -85,9 +85,9 @@
         <div class="nav-wrapper">
           <ul class="left ">
             <li <?php if (isset($AddActive) and $AddActive == "Todas"): ?> class="active" <?php endif ?>><a href="<?= site_url('/FrontEnd/index') ?>">Todas</a></li>
-            <li <?php if (isset($AddActive) and $AddActive == "1"): ?> class="active" <?php endif ?>><a href="<?= site_url('/FrontEnd/Genero/1') ?>">Hombre</a></li>
-            <li <?php if (isset($AddActive) and $AddActive == "2"): ?> class="active" <?php endif ?>><a href="<?= site_url('/FrontEnd/Genero/2') ?>">Mujer</a></li>
-            <li <?php if (isset($AddActive) and $AddActive == "3"): ?> class="active" <?php endif ?>><a href="<?= site_url('/FrontEnd/Genero/3') ?>">Unisex</a></li>
+            <li <?php if (isset($AddActive) and $AddActive == "hombre"): ?> class="active" <?php endif ?>><a href="<?= site_url('/FrontEnd/Genero/hombre') ?>">Hombre</a></li>
+            <li <?php if (isset($AddActive) and $AddActive == "mujer"): ?> class="active" <?php endif ?>><a href="<?= site_url('/FrontEnd/Genero/mujer') ?>">Mujer</a></li>
+            <li <?php if (isset($AddActive) and $AddActive == "unisex"): ?> class="active" <?php endif ?>><a href="<?= site_url('/FrontEnd/Genero/unisex') ?>">Unisex</a></li>
           </ul>
           <a class="btn-floating btn-large halfway-fab waves-effect waves-light deep-orange darken-4" href="#BuscarZapatilla">
             <i class="material-icons">search</i>
@@ -101,43 +101,39 @@
       <div class="container">
         <div class="gallery row">
 
-          <?php foreach ($Zapatillas as $key => $valueZap) :?>
+          <?php foreach ($Zapatillas as $key => $value) :?>
           <div class="col l4 m6 s12 gallery-item gallery-expand gallery-filter">
             <div class="gallery-curve-wrapper">
               <a class="gallery-cover gray">
-                <img class="responsive-img" src='<?=base_url("resources/images/Modelos/ZapatillaPortada-".$valueZap->get("zapatilla_id")).".jpg"?>'>
+                <img class="responsive-img" src='<?=base_url("resources/images/Modelos/ZapatillaPortada-".$value->get("zapatilla_id")).".jpg"?>'>
               </a>
               <div class="gallery-header">
-                <span class="blue-text"><?=$valueZap->get('marca_nombre')?></span>
-                <span class="blue-text"><?=$valueZap->get('zapatilla_modelo')?></span><br>
-                <span class="deep-orange-text"><i class='fa fa-dollar'></i><span> <?=$valueZap->get('zapatilla_precio')?></span></span>
+                <span class="blue-text"><?=$value->get('marca_nombre')?></span>
+                <span class="blue-text"><?=$value->get('zapatilla_modelo')?></span><br>
+                <span class="deep-orange-text"><i class='fa fa-dollar'></i><span> <?=$value->get('zapatilla_precio')?></span></span>
               </div>
               <div class="gallery-body">
                 <div class="title-wrapper">
-                  <h4><span class="deep-orange-text"><?=$valueZap->get('zapatilla_modelo')?></span></h4>
-                  <h6><span class="blue-text"><?=$valueZap->get('categoria_nombre')?></span></h6>
+                  <h4><span class="deep-orange-text"> <?=$value->get('marca_nombre')?> <?=$value->get('zapatilla_modelo')?></span></h4>
+                  <h6><span class="blue-text"><?=$value->get('categoria_nombre')?></span></h6>
                 </div>
 
                 <div class="description">
                   <div>
-                    <h5><i class='deep-orange-text fa fa-dollar'></i> <?=$valueZap->get('zapatilla_precio')?></h5><br>
-                    <span class="deep-orange-text">Tallas Desde: <?=$valueZap->get('zapatilla_talla_desde')?></span><br>
-                    <span class="deep-orange-text">Hasta: <?=$valueZap->get('zapatilla_talla_hasta')?></span>
+                    <h5><i class='deep-orange-text fa fa-dollar'></i> <?=$value->get('zapatilla_precio')?></h5><br>
+                    <span class="deep-orange-text">Tallas Desde: <?=$value->get('zapatilla_talla_desde')?></span><br>
+                    <span class="deep-orange-text">Hasta: <?=$value->get('zapatilla_talla_hasta')?></span>
                   </div><br>
-                  <p><?=$valueZap->get('zapatilla_descripcion')?></p>
+                  <p><?=$value->get('zapatilla_descripcion')?></p>
                 </div>
 
                 <div class="carousel-wrapper">
                   <div class="carousel">
-                    <?php foreach ($Imagenes as $key => $valueImg) :?>
-                      <?php if ($valueZap->get('zapatilla_id') == $valueImg->get('imagen_id')) { ?>
-                        <a class="carousel-item" href="#one!"><img src='<?=base_url("resources/images/Modelos/".$valueImg->get("imagen_portada")).".jpg"?>'></a>
-                        <a class="carousel-item" href="#two!"><img src='<?=base_url("resources/images/Modelos/".$valueImg->get("imagen_portada")).".jpg"?>'></a>
-                        <a class="carousel-item" href="#three!"><img src='<?=base_url("resources/images/Modelos/".$valueImg->get("imagen_portada")).".jpg"?>'></a>
-                        <a class="carousel-item" href="#four!"><img src='<?=base_url("resources/images/Modelos/".$valueImg->get("imagen_portada")).".jpg"?>'></a>
-                        <a class="carousel-item" href="#five!"><img src='<?=base_url("resources/images/Modelos/".$valueImg->get("imagen_portada")).".jpg"?>'></a>
-                    <?php } ?>
-                    <?php endforeach  ?>
+                        <a class="carousel-item" href="#one!"><img src='<?=base_url("resources/images/Modelos/ZapatillaPortada-".$value->get("zapatilla_id")).".jpg"?>'></a>
+                        <a class="carousel-item" href="#two!"><img src='<?=base_url("resources/images/Modelos/ZapatillaPortada-".$value->get("zapatilla_id")).".jpg"?>'></a>
+                        <a class="carousel-item" href="#three!"><img src='<?=base_url("resources/images/Modelos/ZapatillaPortada-".$value->get("zapatilla_id")).".jpg"?>'></a>
+                        <a class="carousel-item" href="#four!"><img src='<?=base_url("resources/images/Modelos/ZapatillaPortada-".$value->get("zapatilla_id")).".jpg"?>'></a>
+                        <a class="carousel-item" href="#five!"><img src='<?=base_url("resources/images/Modelos/ZapatillaPortada-".$value->get("zapatilla_id")).".jpg"?>'></a>
                   </div>
                 </div>
               </div>

@@ -8,14 +8,12 @@ class FrontEnd extends CI_Controller{
     parent::__construct();
     $this->load->model('Zapatillas_Model', 'Zapatillas');
     $this->load->model('Marcas_Model', 'Marcas');
-    $this->load->model('Imagenes_Model', 'Imagenes');
   }
 
   function index()
   {
     $datos['Zapatillas'] = $this->Zapatillas->findAll();
     $datos['Marcas'] = $this->Marcas->findAll();
-    $datos['Imagenes'] = $this->Imagenes->findAll();
     $datos['AddActive'] = "Todas";
     $datos['Frase'] = "Del Mundo para Tus Pies!";
     $this->load->view('Inicio/Inicio', $datos);
@@ -25,14 +23,13 @@ class FrontEnd extends CI_Controller{
   {
     $datos['Zapatillas'] = $this->Zapatillas->findBySex($Genero);
     $datos['Marcas'] = $this->Marcas->findAll();
-    $datos['Imagenes'] = $this->Imagenes->findAll();
     $datos['AddActive'] = "$Genero";
 
     //ENUNCIADOS PARALAX
-    if ($Genero == 1) { $datos['Frase'] = "Zapatillas Hombre";}
-      elseif ($Genero == 2) { $datos['Frase'] = "Zapatillas Mujer"; }
-      elseif ($Genero == 3) { $datos['Frase'] = "Zapatillas Unisex";}
-      elseif ($Genero != 1 || $Genero != 2 || $Genero != 3) { $datos['Frase'] = "Aqui no Sapo Culiao"; }
+    if ($Genero == 'hombre') { $datos['Frase'] = "Zapatillas Hombre";}
+      elseif ($Genero == 'mujer') { $datos['Frase'] = "Zapatillas Mujer"; }
+      elseif ($Genero == 'unisex') { $datos['Frase'] = "Zapatillas Unisex";}
+      elseif ($Genero != 'hombre' || $Genero != 'mujer' || $Genero != 'unisex') { $datos['Frase'] = "Aqui no Sapo Culiao"; }
 
     $this->load->view('Inicio/Inicio', $datos);
   }
@@ -41,7 +38,6 @@ class FrontEnd extends CI_Controller{
   {
     $datos['Zapatillas'] = $this->Zapatillas->findByBrand($Marca);
     $datos['Marcas'] = $this->Marcas->findAll();
-    $datos['Imagenes'] = $this->Imagenes->findAll();
     $datos['AddActive'] = "Todas";
 
     //ENUNCIADOS PARALAX
@@ -61,7 +57,6 @@ class FrontEnd extends CI_Controller{
   {
     $datos['Zapatillas'] = $this->Zapatillas->findAll();
     $datos['Marcas'] = $this->Marcas->findAll();
-    $datos['Imagenes'] = $this->Imagenes->findAll();
     $this->load->view('Zapatillas', $datos);
   }
 
