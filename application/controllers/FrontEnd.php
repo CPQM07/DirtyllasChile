@@ -41,14 +41,14 @@ class FrontEnd extends CI_Controller{
     $datos['AddActive'] = "Todas";
 
     //ENUNCIADOS PARALAX
-    if ($Marca == 1) { $datos['Frase'] = "NIKE";}
-      elseif ($Marca == 2) { $datos['Frase'] = "ADIDAS"; }
-      elseif ($Marca == 3) { $datos['Frase'] = "NEW BALANCE";}
-      elseif ($Marca == 4) { $datos['Frase'] = "PUMA";}
-      elseif ($Marca == 5) { $datos['Frase'] = "ASICS";}
-      elseif ($Marca == 6) { $datos['Frase'] = "TIMBERLAND";}
-      elseif ($Marca != 1 || $Marca != 2 || $Marca != 3 ||
-      $Marca != 4 || $Marca != 5 || $Marca != 6) { $datos['Frase'] = "Aqui no Sapo Culiao"; }
+    if ($Marca == 'NIKE') { $datos['Frase'] = "NIKE";}
+      elseif ($Marca == 'ADIDAS') { $datos['Frase'] = "ADIDAS"; }
+      elseif ($Marca == 'NEW BALANCE') { $datos['Frase'] = "NEW BALANCE";}
+      elseif ($Marca == 'PUMA') { $datos['Frase'] = "PUMA";}
+      elseif ($Marca == 'ASICS') { $datos['Frase'] = "ASICS";}
+      elseif ($Marca == 'TIMBERLAND') { $datos['Frase'] = "TIMBERLAND";}
+      elseif ($Marca != 'NIKE' || $Marca != 'ADIDAS' || $Marca != 'NEW BALANCE' ||
+      $Marca != 'PUMA' || $Marca != 'ASICS' || $Marca != 'TIMBERLAND') { $datos['Frase'] = "Aqui no Sapo Culiao"; }
 
     $this->load->view('Inicio/Inicio', $datos);
   }

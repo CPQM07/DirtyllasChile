@@ -73,7 +73,7 @@
           <h5 class="center"><em>DIRTYLLAS CHILE - MARCAS</em></h5>
             <div class="collection">
                 <?php foreach ($Marcas as $key => $value) :?>
-                  <a class="collection-item center" href="<?=site_url('FrontEnd/Marca/'.$value->get('marca_id'))?>"><span class="orange-text"><?= $value->get('marca_nombre') ?></span></a>
+                  <a class="collection-item center" href="<?=site_url('FrontEnd/Marca/'.$value->get('marca_nombre'))?>"><span class="orange-text"><?= $value->get('marca_nombre') ?></span></a>
                 <?php endforeach ?>
             </div>
         </div>
