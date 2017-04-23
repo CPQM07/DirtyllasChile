@@ -8,17 +8,17 @@
     <meta name="author" content="">
 
     <title>DIRTYllasChile</title>
-    <link rel="shortcut icon" href="<?= base_url() ?>resources/images/Dirtyllas/DIRTYllasLogo.ico">
+    <link rel="shortcut icon" href="<?= base_url() ?>Resources/images/Dirtyllas/DIRTYllasLogo.ico">
     <!-- Lato Font -->
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <!-- Stylesheet -->
-    <link href="<?= base_url() ?>resources/css/gallery-materialize.min.css" rel="stylesheet">
+    <link href="<?= base_url() ?>Resources/css/gallery-materialize.min.css" rel="stylesheet">
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Font Awesome Icons -->
-    <link href="<?= base_url() ?>resources/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<?= base_url() ?>Resources/css/font-awesome.min.css" rel="stylesheet">
     <!-- Font Awesome Icons -->
-    <link href="<?= base_url() ?>resources/css/gradients.min.css" rel="stylesheet">
+    <link href="<?= base_url() ?>Resources/css/gradients.min.css" rel="stylesheet">
   </head>
   <body>
 
@@ -37,7 +37,7 @@
             </ul>
 
             <ul class="side-nav" id="nav-mobile">
-              <li><img src="<?= base_url() ?>resources/images/Dirtyllas/DIRTYllasLogo.png" width="100px" alt=""></li>
+              <li><img src="<?= base_url() ?>Resources/images/Dirtyllas/DIRTYllasLogo.png" width="100px" alt=""></li>
               <li class="active"><a>Siguenos <i class='fa fa-flag-o'></i></a></li>
               <li><a href="https://www.instagram.com/_dirtyllas/"><i class='fa fa-instagram orange-text'></i><span class="grey-text"> _Dirtyllas</span></a></li>
               <li><a href="https://www.facebook.com/DirtyllasCL/"><i class='fa fa-facebook orange-text'></i><span class="grey-text"> DIRTYllasChile</span></a></li>
@@ -54,21 +54,21 @@
         <div class="container">
           <br>
           <div class="header center">
-            <img class="responsive-img" src="<?= base_url() ?>resources/images/Dirtyllas/DIRTYllasLogo.png" width="300px" alt="">
+            <img class="responsive-img" src="<?= base_url() ?>Resources/images/Dirtyllas/DIRTYllasLogo.png" width="300px" alt="">
           </div>
           <div class="row center">
             <h5 class="header col s12 light white-text"><?= $Frase ?></h5>
           </div>
         </div>
       </div>
-      <div class="parallax"><img src="<?= base_url() ?>resources/images/Dirtyllas/Banner3.jpg"></div>
+      <div class="parallax"><img src="<?= base_url() ?>Resources/images/Dirtyllas/Banner3.jpg"></div>
     </div><br>
 
     <!-- Modal Structure -->
     <div id="BuscarZapatilla" class="modal modal-fixed-footer">
         <div class="modal-content">
           <div class="center">
-            <img src="<?= base_url() ?>resources/images/Dirtyllas/DIRTYllasLogo.png" width="100px" alt="">
+            <img src="<?= base_url() ?>Resources/images/Dirtyllas/DIRTYllasLogo.png" width="100px" alt="">
           </div><br>
           <h5 class="center"><em>DIRTYLLAS CHILE - MARCAS</em></h5>
             <div class="collection">
@@ -105,7 +105,7 @@
           <div class="col l4 m6 s12 gallery-item gallery-expand gallery-filter">
             <div class="gallery-curve-wrapper">
               <a class="gallery-cover gray">
-                <img class="responsive-img" src='<?=base_url("resources/images/Modelos/ZapatillaPortada-".$value->get("zapatilla_id")).".jpg"?>'>
+                <img class="responsive-img" src='<?=base_url("Resources/images/Modelos/ZapatillaPortada-".$value->get("zapatilla_id")).".jpg"?>'>
               </a>
               <div class="gallery-header">
                 <span class="blue-text"><?=$value->get('marca_nombre')?></span>
@@ -129,11 +129,11 @@
 
                 <div class="carousel-wrapper">
                   <div class="carousel">
-                        <a class="carousel-item" href="#one!"><img src='<?=base_url("resources/images/Modelos/ZapatillaPortada-".$value->get("zapatilla_id")).".jpg"?>'></a>
-                        <a class="carousel-item" href="#two!"><img src='<?=base_url("resources/images/Modelos/ZapatillaPortada-".$value->get("zapatilla_id")).".jpg"?>'></a>
-                        <a class="carousel-item" href="#three!"><img src='<?=base_url("resources/images/Modelos/ZapatillaPortada-".$value->get("zapatilla_id")).".jpg"?>'></a>
-                        <a class="carousel-item" href="#four!"><img src='<?=base_url("resources/images/Modelos/ZapatillaPortada-".$value->get("zapatilla_id")).".jpg"?>'></a>
-                        <a class="carousel-item" href="#five!"><img src='<?=base_url("resources/images/Modelos/ZapatillaPortada-".$value->get("zapatilla_id")).".jpg"?>'></a>
+                        <a class="carousel-item" href="#one!"><img src='<?=base_url("Resources/images/Modelos/ZapatillaPortada-".$value->get("zapatilla_id")).".jpg"?>'></a>
+                        <a class="carousel-item" href="#two!"><img src='<?=base_url("Resources/images/Modelos/ZapatillaPortada-".$value->get("zapatilla_id")).".jpg"?>'></a>
+                        <a class="carousel-item" href="#three!"><img src='<?=base_url("Resources/images/Modelos/ZapatillaPortada-".$value->get("zapatilla_id")).".jpg"?>'></a>
+                        <a class="carousel-item" href="#four!"><img src='<?=base_url("Resources/images/Modelos/ZapatillaPortada-".$value->get("zapatilla_id")).".jpg"?>'></a>
+                        <a class="carousel-item" href="#five!"><img src='<?=base_url("Resources/images/Modelos/ZapatillaPortada-".$value->get("zapatilla_id")).".jpg"?>'></a>
                   </div>
                 </div>
               </div>
@@ -172,12 +172,12 @@
 
     <!-- Core Javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="<?= base_url() ?>resources/js/imagesloaded.pkgd.min.js"></script>
-    <script src="<?= base_url() ?>resources/js/masonry.pkgd.min.js"></script>
+    <script src="<?= base_url() ?>Resources/jsFront/imagesloaded.pkgd.min.js"></script>
+    <script src="<?= base_url() ?>Resources/jsFront/masonry.pkgd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/materialize/0.98.0/js/materialize.min.js"></script>
-    <script src="<?= base_url() ?>resources/js/color-thief.min.js"></script>
-    <script src="<?= base_url() ?>resources/js/galleryExpand.js"></script>
-    <script src="<?= base_url() ?>resources/js/init.js"></script>
+    <script src="<?= base_url() ?>Resources/jsFront/color-thief.min.js"></script>
+    <script src="<?= base_url() ?>Resources/jsFront/galleryExpand.js"></script>
+    <script src="<?= base_url() ?>Resources/jsFront/init.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function(){

@@ -41,7 +41,7 @@ function update($id, $data) {
   }
 }
 
-function delete($id){}
+function delete($id){
   $this->db->where('categoria_id',$id);
   return $this->db->delete('dirtyllas_categorias');
 }
