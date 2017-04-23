@@ -108,6 +108,21 @@ function findByBrand($Marca){
   return $result;
 }
 
+function findByCategory($Categoria){
+  $result=array();
+  $bit = null;
+  $consulta = $this->db->query('select zapatilla_id, zapatilla_genero, zapatilla_modelo, zapatilla_talla_desde,
+  zapatilla_talla_hasta, zapatilla_descripcion, zapatilla_precio, zapatilla_imagen_portada,
+  zapatilla_imagen_uno, zapatilla_imagen_dos, zapatilla_imagen_tres, zapatilla_imagen_cuatro, marca_nombre, categoria_nombre from dirtyllas_zapatillas
+  INNER JOIN dirtyllas_marcas on dirtyllas_marcas.marca_id = dirtyllas_zapatillas.zapatilla_marca_id
+  INNER JOIN dirtyllas_categorias on dirtyllas_categorias.categoria_id = dirtyllas_zapatillas.zapatilla_categoria_id
+  where dirtyllas_categorias.categoria_nombre ="'.$Categoria.'"');
+    foreach ($consulta->result() as $row) {
+    $result[] = $this->create($row);
+  }
+  return $result;
+}
+
   function findAllShoesImg(){
     $result = array();
     $this->load->database();

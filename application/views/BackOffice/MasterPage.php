@@ -18,7 +18,7 @@
     <link type='text/css' href="<?= base_url() ?>Resources/css/font-awesome.min.css" rel="stylesheet" />
     <link type='text/css' href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet'>
 </head>
-
+<?php $user = $this->session->userdata('logged_in');?>
 <body>
     <div class="wrapper">
         <div class="sidebar" data-active-color="black" data-background-color="white" data-image="<?= base_url() ?>Resources/img/sidebar-1.jpg">
@@ -43,7 +43,7 @@
                         <img src="<?= base_url() ?>Resources/images/Dirtyllas/DIRTYllasLogo.png" />
                     </div>
                     <div class="info">
-                        <a class="collapsed"> Christopher Quezada </a>
+												<a class="collapsed"> <?=$user["correo"];?> </a>
                     </div>
                 </div>
                 <ul class="nav">
@@ -84,21 +84,17 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#"> Bienvenido </a>
+                        <a class="navbar-brand" href="#"> Bienvenido - <?=$user["nombre"];?> </a>
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class='fa fa-user'></i>
-                                    <p class="hidden-lg hidden-md">
-                                        Notifications
-                                        <b class="caret"></b>
-                                    </p>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="#">Salir</a>
+                                        <a href="<?= site_url('BackOffice/logout') ?>">Salir</a>
                                     </li>
                                 </ul>
                             </li>

@@ -27,10 +27,11 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
-                            <form method="#" action="#">
+													<form action="<?=site_url('BackOffice/login')?>" method="POST" >
                                 <div class="card card-login card-hidden">
                                     <div class="card-header text-center" data-background-color="dark">
                                         <h4 class="card-title">Bienvenido</h4>
+																				<?=(isset($error))? $error : ""; ?>
                                     </div>
                                     <div class="card-content">
                                         <div class="input-group">
@@ -39,7 +40,7 @@
                                             </span>
                                             <div class="form-group label-floating">
                                                 <label class="control-label">Correo</label>
-                                                <input type="email" class="form-control">
+                                                <input type="email"  name="correo" class="form-control">
                                             </div>
                                         </div>
                                         <div class="input-group">
@@ -48,7 +49,7 @@
                                             </span>
                                             <div class="form-group label-floating">
                                                 <label class="control-label">Contraseña</label>
-                                                <input type="password" class="form-control">
+                                                <input type="password"  name="contrasena" class="form-control">
                                             </div>
                                         </div>
                                     </div>

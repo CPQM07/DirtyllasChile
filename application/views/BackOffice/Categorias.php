@@ -41,7 +41,7 @@
                     <p class="card-description">
                         <?= $value->get('categoria_nombre') ?>
                     </p>
-                    <a href="#" class="btn btn-dark btn-round">Ver Zapatillas</a>
+                    <a href="<?=site_url('BackOffice/showByCategory/'.$value->get('categoria_nombre'))?>" class="btn btn-dark btn-round">Ver Zapatillas</a>
                 </div>
             </div>
         </div>
