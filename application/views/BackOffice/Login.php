@@ -2,26 +2,26 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<link rel="shortcut icon" href="<?= base_url() ?>resources/images/LogoInacap.ico">
+	<link rel="shortcut icon" href="<?= base_url() ?>Resources/images/Dirtyllas/DIRTYllasLogo.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Inacap Renca - Pañol</title>
+	<title>DIRTYllas CHILE - ADM</title>
 
 
      <!-- Bootstrap core CSS     -->
-    <link type='text/css' href="<?= base_url() ?>resources/css/bootstrap.min.css" rel="stylesheet" />
+    <link type='text/css' href="<?= base_url() ?>Resources/css/bootstrap.min.css" rel="stylesheet" />
 
     <!--  Paper Dashboard core CSS    -->
-    <link type='text/css' href="<?= base_url() ?>resources/css/Dashboard.css" rel="stylesheet" />
+    <link type='text/css' href="<?= base_url() ?>Resources/css/Dashboard.css" rel="stylesheet" />
 
     <!--  Fonts and icons     -->
-    <link type='text/css' href="<?= base_url() ?>resources/css/font-awesome.min.css" rel="stylesheet" />
+    <link type='text/css' href="<?= base_url() ?>Resources/css/font-awesome.min.css" rel="stylesheet" />
     <link type='text/css' href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet'>
 </head>
 
 <body>
     <div class="wrapper wrapper-full-page">
-        <div class="full-page login-page" filter-color="black" data-image="<?= base_url()  ?>resources/images/Background.jpg">
+        <div class="full-page login-page" filter-color="" data-image="<?= base_url('Resources/images/Dirtyllas/Banner3.jpg') ?>">
             <!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
             <div class="content">
                 <div class="container">
@@ -29,11 +29,8 @@
                         <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
                             <form method="#" action="#">
                                 <div class="card card-login card-hidden">
-                                    <div class="card-header text-center" data-background-color="red">
+                                    <div class="card-header text-center" data-background-color="dark">
                                         <h4 class="card-title">Bienvenido</h4>
-                                        <div class="social-line">
-																						<img src="<?= base_url()  ?>resources/images/LogoInacapBanner.png" width="50px" alt="">
-                                        </div>
                                     </div>
                                     <div class="card-content">
                                         <div class="input-group">
@@ -75,7 +72,7 @@
                         <script>
                             document.write(new Date().getFullYear())
                         </script>
-                        <a href="#"><span class="text-danger">TRY-CATCH</span></a>, Coded with <i class='fa fa-heart text-danger'></i>
+                        <a href="#"><span class="text-danger">CPQM07</span></a>, Coded with <i class='fa fa-heart text-danger'></i>
                     </p>
                 </div>
             </footer>
@@ -85,48 +82,48 @@
 
 
 <!--   Core JS Files   -->
-<script src="<?= base_url() ?>resources/js/jquery.min.js" type="text/javascript"></script>
-<script src="<?= base_url() ?>resources/js/jquery-ui.min.js" type="text/javascript"></script>
-<script src="<?= base_url() ?>resources/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="<?= base_url() ?>Resources/jsBack/jquery.min.js" type="text/javascript"></script>
+<script src="<?= base_url() ?>Resources/jsBack/jquery-ui.min.js" type="text/javascript"></script>
+<script src="<?= base_url() ?>Resources/jsBack/bootstrap.min.js" type="text/javascript"></script>
 
-<script src="<?= base_url() ?>resources/js/material.min.js" type="text/javascript"></script>
-<script src="<?= base_url() ?>resources/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+<script src="<?= base_url() ?>Resources/jsBack/material.min.js" type="text/javascript"></script>
+<script src="<?= base_url() ?>Resources/jsBack/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
 <!-- Forms Validations Plugin -->
-<script src="<?= base_url() ?>resources/js/jquery.validate.min.js"></script>
+<script src="<?= base_url() ?>Resources/jsBack/jquery.validate.min.js"></script>
 <!--  Plugin for Date Time Picker and Full Calendar Plugin-->
-<script src="<?= base_url() ?>resources/js/moment.min.js"></script>
+<script src="<?= base_url() ?>Resources/jsBack/moment.min.js"></script>
 <!--  Charts Plugin -->
-<script src="<?= base_url() ?>resources/js/chartist.min.js"></script>
+<script src="<?= base_url() ?>Resources/jsBack/chartist.min.js"></script>
 <!--  Plugin for the Wizard -->
-<script src="<?= base_url() ?>resources/js/jquery.bootstrap-wizard.js"></script>
+<script src="<?= base_url() ?>Resources/jsBack/jquery.bootstrap-wizard.js"></script>
 <!--  Notifications Plugin    -->
-<script src="<?= base_url() ?>resources/js/bootstrap-notify.js"></script>
+<script src="<?= base_url() ?>Resources/jsBack/bootstrap-notify.js"></script>
 <!--   Sharrre Library    -->
-<script src="<?= base_url() ?>resources/js/jquery.sharrre.js"></script>
+<script src="<?= base_url() ?>Resources/jsBack/jquery.sharrre.js"></script>
 <!-- DateTimePicker Plugin -->
-<script src="<?= base_url() ?>resources/js/bootstrap-datetimepicker.js"></script>
+<script src="<?= base_url() ?>Resources/jsBack/bootstrap-datetimepicker.js"></script>
 <!-- Vector Map plugin -->
-<script src="<?= base_url() ?>resources/js/jquery-jvectormap.js"></script>
+<script src="<?= base_url() ?>Resources/jsBack/jquery-jvectormap.js"></script>
 <!-- Sliders Plugin -->
-<script src="<?= base_url() ?>resources/js/nouislider.min.js"></script>
+<script src="<?= base_url() ?>Resources/jsBack/nouislider.min.js"></script>
 <!--  Google Maps Plugin    -->
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 <!-- Select Plugin -->
-<script src="<?= base_url() ?>resources/js/jquery.select-bootstrap.js"></script>
+<script src="<?= base_url() ?>Resources/jsBack/jquery.select-bootstrap.js"></script>
 <!--  DataTables.net Plugin    -->
-<script src="<?= base_url() ?>resources/js/jquery.datatables.js"></script>
+<script src="<?= base_url() ?>Resources/jsBack/jquery.datatables.js"></script>
 <!-- Sweet Alert 2 plugin -->
-<script src="<?= base_url() ?>resources/js/sweetalert2.js"></script>
+<script src="<?= base_url() ?>Resources/jsBack/sweetalert2.js"></script>
 <!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
-<script src="<?= base_url() ?>resources/js/jasny-bootstrap.min.js"></script>
+<script src="<?= base_url() ?>Resources/jsBack/jasny-bootstrap.min.js"></script>
 <!--  Full Calendar Plugin    -->
-<script src="<?= base_url() ?>resources/js/fullcalendar.min.js"></script>
+<script src="<?= base_url() ?>Resources/jsBack/fullcalendar.min.js"></script>
 <!-- TagsInput Plugin -->
-<script src="<?= base_url() ?>resources/js/jquery.tagsinput.js"></script>
+<script src="<?= base_url() ?>Resources/jsBack/jquery.tagsinput.js"></script>
 <!-- Material Dashboard javascript methods -->
-<script src="<?= base_url() ?>resources/js/material-dashboard.js"></script>
+<script src="<?= base_url() ?>Resources/jsBack/material-dashboard.js"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-<script src="<?= base_url() ?>resources/js/demo.js"></script>
+<script src="<?= base_url() ?>Resources/jsBack/demo.js"></script>
 
 <script type="text/javascript">
     $().ready(function() {

@@ -10,7 +10,7 @@ class Login extends CI_Controller{
 
   function index()
   {
-    $this->load->view('/Login');
+    $this->load->view('/BackOffice/Login');
   }
 
 }

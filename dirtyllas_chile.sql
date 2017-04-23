@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 20-04-2017 a las 10:56:05
+-- Tiempo de generación: 23-04-2017 a las 01:00:17
 -- Versión del servidor: 5.7.17-0ubuntu1
 -- Versión de PHP: 7.0.15-1ubuntu4
 
@@ -65,6 +65,27 @@ INSERT INTO `dirtyllas_marcas` (`marca_id`, `marca_nombre`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `dirtyllas_usuarios`
+--
+
+CREATE TABLE `dirtyllas_usuarios` (
+  `usuario_id` int(11) NOT NULL,
+  `usuario_correo` varchar(100) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `usuario_contrasena` varchar(100) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `usuario_nombre` varchar(100) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `usuario_apellido` varchar(100) COLLATE utf8mb4_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `dirtyllas_usuarios`
+--
+
+INSERT INTO `dirtyllas_usuarios` (`usuario_id`, `usuario_correo`, `usuario_contrasena`, `usuario_nombre`, `usuario_apellido`) VALUES
+(1, 'cpqm07@gmail.com', '2112Aeqdlf', 'Christopher', 'Quezada');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `dirtyllas_zapatillas`
 --
 
@@ -109,6 +130,13 @@ ALTER TABLE `dirtyllas_marcas`
   ADD PRIMARY KEY (`marca_id`);
 
 --
+-- Indices de la tabla `dirtyllas_usuarios`
+--
+ALTER TABLE `dirtyllas_usuarios`
+  ADD PRIMARY KEY (`usuario_id`),
+  ADD UNIQUE KEY `usuario_correo` (`usuario_correo`);
+
+--
 -- Indices de la tabla `dirtyllas_zapatillas`
 --
 ALTER TABLE `dirtyllas_zapatillas`
@@ -130,6 +158,11 @@ ALTER TABLE `dirtyllas_categorias`
 --
 ALTER TABLE `dirtyllas_marcas`
   MODIFY `marca_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT de la tabla `dirtyllas_usuarios`
+--
+ALTER TABLE `dirtyllas_usuarios`
+  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `dirtyllas_zapatillas`
 --
